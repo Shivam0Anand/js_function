@@ -69,12 +69,16 @@ function checkAge(age) {
 
 ```js
 // your code goes here
+age > 18 ? true : confirm("Did Parent Allow");
 ```
 
 4.2 🎖Convert the above function using `||` operator.
 
 ```js
 // your code goes here
+function checkAge() {
+  return age > 18 || confirm("Did Parent Allow");
+}
 ```
 
 Will the function work differently if else is removed like below?
@@ -89,7 +93,11 @@ function checkAge(age) {
 }
 ```
 
+yes;
+
 Is there any difference in the behavior of these two variants? If there is what is that?
+
+<!-- we need to paas the value while calling function -->
 
 5. 🎖 Write a function pow(x,n) that returns x in power n.
 
@@ -98,28 +106,47 @@ Is there any difference in the behavior of these two variants? If there is what 
 
 ````js
 // Your code goes here
+function pow(x, n) {
+  if(n>0){
+    return x**n;
+  }
+}
 
 // After writing code uncomment to check the answer.
-// pow(3, 2); // 9
-// pow(3, 3); // 27
-// pow(1, 100); // 1
-// pow(-31, 2); // "The number below 1 is not allowed"
+pow(3, 2); // 9
+pow(3, 3); // 27
+pow(1, 100); // 1
+pow(-31, 2); // "The number below 1 is not allowed"
 
 6. 🎖Write a program that asks the user for a number n and gives them the possibility to choose between computing the sum and computing the product of 1,…,n. Return the result accordingly.
 
 ```js
+
 // your code goes here
 ````
 
 6. 🎖Write a program that asks the user for a number n using prompt and prints the sum of the numbers 1 to n
 
 ```js
+function sum() {
+  var n = Number(prompt("Enter no."));
+  var sum = (n * (n + 1)) / 2;
+  return sum;
+}
 // your code goes here
 ```
 
 7. 🎖Modify the previous program such that only multiples of 5 or 7 are considered in the sum, e.g. n = 20 (5,7,10,14,15,20) 71
 
 ```js
+function sumM() {
+  var n = Number(prompt("Enter n"));
+  var sum = 0;
+  for (var i = 1; i <= n; i++) {
+    if (i % 5 == 0 || i % 7 == 0) sum = sum + i;
+  }
+  return sum;
+}
 // your code goes here
 ```
 
@@ -127,6 +154,10 @@ Is there any difference in the behavior of these two variants? If there is what 
 
 ```js
 // Your code here.
+function min(a, b) {
+  if (a > b) return a + " is greater";
+  else return b + " is greater";
+}
 
 console.log(min(0, 10));
 // → 0
